@@ -1,0 +1,1458 @@
+R00001.00    [CASEID]                                       Survey Year: 1979
+  PRIMARY VARIABLE
+
+ 
+             IDENTIFICATION CODE
+ 
+ORIGINAL QUESTION NAME: CASEID
+ 
+NOTE: THIS NUMBER WAS ASSIGNED ACCORDING TO THE RECORD NUMBER OF EACH RESPONDENT
+ON THE TAPE. THE FIRST RESPONDENT WAS ASSIGNED ID#1, THE SECOND WAS ASSIGNED 
+ID#2, ETC.
+ 
+ACTUAL NUMBER
+ 
+UNIVERSE: All
+ 
+Refusal(-1)            0
+Don't Know(-2)         0
+TOTAL =========>   12686   VALID SKIP(-4)       0     NON-INTERVIEW(-5)       0
+ 
+Min:              1        Max:          12686        Mean:              6343.5
+ 
+Lead In: None.
+Default Next Question: R00001.49
+--------------------------------------------------------------------------------
+R01736.00    [SAMPLE_ID]                                    Survey Year: 1979
+  PRIMARY VARIABLE
+
+ 
+             SAMPLE IDENTIFICATION CODE
+ 
+ORIGINAL QUESTION NAME: S24Q01
+ 
+UNIVERSE: Entire Sample
+ 
+    2236       1 CROSS MALE WHITE
+     203       2 CROSS MALE WH. POOR
+     346       3 CROSS MALE BLACK
+     218       4 CROSS MALE HISPANIC
+    2279       5 CROSS FEMALE WHITE
+     198       6 CROSS FEMALE WH POOR
+     405       7 CROSS FEMALE BLACK
+     226       8 CROSS FEMALE HISPANIC
+     742       9 SUP MALE WH POOR
+    1105      10 SUP MALE BLACK
+     729      11 SUP MALE HISPANIC
+     901      12 SUP FEM WH POOR
+    1067      13 SUP FEMALE BLACK
+     751      14 SUP FEMALE HISPANIC
+     609      15 MIL MALE WHITE
+     162      16 MIL MALE BLACK
+      53      17 MIL MALE HISPANIC
+     342      18 MIL FEMALE WHITE
+      89      19 MIL FEMALE BLACK
+      25      20 MIL FEMALE HISPANIC
+  -------
+   12686
+ 
+Refusal(-1)            0
+Don't Know(-2)         0
+TOTAL =========>   12686   VALID SKIP(-4)       0     NON-INTERVIEW(-5)       0
+ 
+Min:              1        Max:             20        Mean:                8.17
+ 
+
+
+NOTE: MARCH 1, 1986  NORC
+ 
+SEX CODE CHANGED ON 42 CASES
+ 
+Lead In: R01735.19[Default]
+Default Next Question: R01737.00
+--------------------------------------------------------------------------------
+R02147.00    [SAMPLE_RACE]                                  Survey Year: 78SCRN
+  PRIMARY VARIABLE
+
+ 
+             R'S RACIAL/ETHNIC COHORT FROM SCREENER
+ 
+UNIVERSE: Entire Sample
+ 
+    2002       1 HISPANIC
+    3174       2 BLACK
+    7510       3 NON-BLACK, NON-HISPANIC
+  -------
+   12686
+ 
+Refusal(-1)            0
+Don't Know(-2)         0
+TOTAL =========>   12686   VALID SKIP(-4)       0     NON-INTERVIEW(-5)       0
+ 
+Min:              1        Max:              3        Mean:                2.43
+ 
+
+
+NOTE: AUGUST 26, 1980  DENNIS GREY
+ 
+DESCRIPTION:
+COHORT=3;
+IF R(1736.)=4 ! R(1736.)=8 ! R(1736.)=11 ! R(1736.)=14 THEN COHORT=1;
+IF R(1736.)=17 ! R(1736.)=20 THEN COHORT=1;
+IF R(1736.)=3 ! R(1736.)=7 ! R(1736.)=10 ! R(1736.)=13 THEN COHORT=2;
+IF R(1736.)=16 ! R(1736.)=19 THEN COHORT=2;
+R(2147.)=COHORT;
+ 
+Lead In: R02146.00[Default]
+Default Next Question: R02148.00
+--------------------------------------------------------------------------------
+R02148.00    [SAMPLE_SEX]                                   Survey Year: 1979
+  PRIMARY VARIABLE
+
+ 
+             SEX OF R
+ 
+UNIVERSE: Entire sample
+ 
+    6403       1 MALE
+    6283       2 FEMALE
+  -------
+   12686
+ 
+Refusal(-1)            0
+Don't Know(-2)         0
+TOTAL =========>   12686   VALID SKIP(-4)       0     NON-INTERVIEW(-5)       0
+ 
+Min:              1        Max:              2        Mean:                 1.5
+ 
+
+
+NOTE: AUGUST 26, 1980  DENNIS GREY
+MARCH 1, 1986  NORC
+ 
+DESCRIPTION:
+IF (R(1736.)>0 & R(1736.)<=4) ! (R(1736.)>=9 & R(1736.)<=11) THEN SEX=1;
+IF R(1736.)>=15 & R(1736.)<=17 THEN SEX=1;
+IF (R(1736.)>=5 & R(1736.)<=8) ! (R(1736.)>=12 & R(1736.)<=14) THEN SEX=
+IF R(1736.)>=18 & R(1736.)<=20 THEN SEX=2;
+R(2148.)=SEX;
+SEX CODE CHANGED ON 42 CASES
+ 
+Lead In: R02147.00[Default]
+Default Next Question: R02149.00
+--------------------------------------------------------------------------------
+T00144.00    [Q3-4]                                         Survey Year: 2006
+  PRIMARY VARIABLE
+
+ 
+             HIGHEST GRADE COMPLETED
+ 
+What is the highest grade or year of regular school that you have completed and 
+gotten credit for?
+ 
+       2       1 1ST GRADE
+       0       2 2ND GRADE
+       0       3 3RD GRADE
+       1       4 4TH GRADE
+       3       5 5TH GRADE
+       3       6 6TH GRADE
+       3       7 7TH GRADE
+       2       8 8TH GRADE
+       3       9 9TH GRADE
+       3      10 10TH GRADE
+       8      11 11TH GRADE
+      64      12 12TH GRADE
+      56      13 1ST YEAR COLLEGE
+      94      14 2ND YEAR COLLEGE
+      49      15 3RD YEAR COLLEGE
+      61      16 4TH YEAR COLLEGE
+      17      17 5TH YEAR COLLEGE
+      35      18 6TH YEAR COLLEGE
+      10      19 7TH YEAR COLLEGE
+      30      20 8TH YEAR COLLEGE OR MORE
+       1      95 UNGRADED
+  -------
+     445
+ 
+Refusal(-1)            0
+Don't Know(-2)         2
+TOTAL =========>     447   VALID SKIP(-4)    7206     NON-INTERVIEW(-5)    5033
+ 
+Min:              1        Max:             95        Mean:               14.71
+ 
+Lead In: T00143.00[Default]
+Default Next Question: T00145.00
+--------------------------------------------------------------------------------
+T00179.00    [Q3-25.01]                                     Survey Year: 2006
+  PRIMARY VARIABLE
+
+ 
+             CREDIT HOURS EARNED AT COLLEGE 01 ATTENDED
+ 
+What (is/was) the total number of credit hours you (have) ever earned at [Name 
+of college or university respondent attended]([sch-loop1 counter])?
+ 
+      26           0
+     132           1 TO 24
+      62          25 TO 49
+      62          50 TO 74
+      29          75 TO 99
+      20         100 TO 124
+       6         125 TO 149
+       8         150 TO 174
+       3         175 TO 199
+       3         200 TO 224
+       2         225 TO 249
+       3         250 TO 99999999: 250+
+  -------
+     356
+ 
+Refusal(-1)            0
+Don't Know(-2)        40
+TOTAL =========>     396   VALID SKIP(-4)    7257     NON-INTERVIEW(-5)    5033
+ 
+Min:              0        Max:            400        Mean:               47.49
+ 
+Lead In: T00176.00[Default]
+Default Next Question: T00182.00
+--------------------------------------------------------------------------------
+T00180.00    [Q3-25.02]                                     Survey Year: 2006
+  PRIMARY VARIABLE
+
+ 
+             CREDIT HOURS EARNED AT COLLEGE 02 ATTENDED
+ 
+What (is/was) the total number of credit hours you (have) ever earned at [Name 
+of college or university respondent attended]([sch-loop1 counter])?
+ 
+       1           0
+      16           1 TO 24
+       3          25 TO 49
+       6          50 TO 74
+       1          75 TO 99
+       0         100 TO 124
+       0         125 TO 149
+       1         150 TO 174
+       0         175 TO 199
+       0         200 TO 224
+       0         225 TO 249
+       0         250 TO 99999999: 250+
+  -------
+      28
+ 
+Refusal(-1)            0
+Don't Know(-2)         1
+TOTAL =========>      29   VALID SKIP(-4)    7624     NON-INTERVIEW(-5)    5033
+ 
+Min:              0        Max:            170        Mean:               31.43
+ 
+Lead In: T00177.00[Default]
+Default Next Question: T00183.00
+--------------------------------------------------------------------------------
+T00181.00    [Q3-25.03]                                     Survey Year: 2006
+  PRIMARY VARIABLE
+
+ 
+             CREDIT HOURS EARNED AT COLLEGE 03 ATTENDED
+ 
+What (is/was) the total number of credit hours you (have) ever earned at [Name 
+of college or university respondent attended]([sch-loop1 counter])?
+ 
+       0           0
+       3           1 TO 24
+       0          25 TO 49
+       0          50 TO 74
+       0          75 TO 99
+       0         100 TO 124
+       0         125 TO 149
+       0         150 TO 174
+       0         175 TO 199
+       0         200 TO 224
+       0         225 TO 249
+       0         250 TO 99999999: 250+
+  -------
+       3
+ 
+Refusal(-1)            0
+Don't Know(-2)         1
+TOTAL =========>       4   VALID SKIP(-4)    7649     NON-INTERVIEW(-5)    5033
+ 
+Min:              4        Max:             15        Mean:               10.33
+ 
+Lead In: T00178.00[Default]
+Default Next Question: T00184.00
+--------------------------------------------------------------------------------
+T09113.00    [Q12-6]                                        Survey Year: 2006
+  PRIMARY VARIABLE
+
+ 
+             NUMBER OF DRINKS RESPONDENT HAS ON AVERAGE DAY
+ 
+On the days that you drink, about how many drinks do you have on the average 
+day?  By a drink, we mean the equivalent of a can of beer, a glass of wine, or a
+shot glass of hard liquor.
+ 
+UNIVERSE: R has had alcohol in last 30 days
+ 
+       0           0
+    1047           1
+    1366           2
+     664           3
+     342           4
+     113           5
+     249           6
+      22           7
+      36           8
+       2           9
+      62          10 TO 999: 10+
+  -------
+    3903
+ 
+Refusal(-1)           14
+Don't Know(-2)        18
+TOTAL =========>    3935   VALID SKIP(-4)    3718     NON-INTERVIEW(-5)    5033
+ 
+Min:              1        Max:             24        Mean:                2.67
+ 
+Lead In: T09112.00[Default]
+Default Next Question: T09114.00
+--------------------------------------------------------------------------------
+T09890.00    [AGEATINT]                                     Survey Year: 2006
+  PRIMARY VARIABLE
+
+ 
+             AGE OF R AT INTERVIEW DATE
+ 
+COMMENT: Age at interview date
+ 
+       0          40
+     526          41
+    1032          42
+    1125          43
+    1028          44
+    1089          45
+     955          46
+     824          47
+     821          48
+     252          49
+       1          50
+       0          51
+       0          52
+  -------
+    7653
+ 
+Refusal(-1)            0
+Don't Know(-2)         0
+TOTAL =========>    7653   VALID SKIP(-4)       0     NON-INTERVIEW(-5)    5033
+ 
+Min:             41        Max:             50        Mean:               44.69
+ 
+Lead In: T09889.00[Default]
+Default Next Question: T09890.01
+--------------------------------------------------------------------------------
+T12143.00    [Q3-4]                                         Survey Year: 2008
+  PRIMARY VARIABLE
+
+ 
+             HIGHEST GRADE COMPLETED
+ 
+What is the highest grade or year of regular school that you have completed and 
+gotten credit for?
+ 
+       1       1 1ST GRADE
+       3       2 2ND GRADE
+      10       3 3RD GRADE
+      11       4 4TH GRADE
+       8       5 5TH GRADE
+      32       6 6TH GRADE
+      29       7 7TH GRADE
+      95       8 8TH GRADE
+     183       9 9TH GRADE
+     339      10 10TH GRADE
+     492      11 11TH GRADE
+    2992      12 12TH GRADE
+     563      13 1ST YEAR COLLEGE
+     999      14 2ND YEAR COLLEGE
+     243      15 3RD YEAR COLLEGE
+    1041      16 4TH YEAR COLLEGE
+     126      17 5TH YEAR COLLEGE
+     336      18 6TH YEAR COLLEGE
+      79      19 7TH YEAR COLLEGE
+     156      20 8TH YEAR COLLEGE OR MORE
+       9      95 UNGRADED
+  -------
+    7747
+ 
+Refusal(-1)            2
+Don't Know(-2)         8
+TOTAL =========>    7757   VALID SKIP(-4)       0     NON-INTERVIEW(-5)    4929
+ 
+Min:              1        Max:             95        Mean:               13.28
+ 
+Lead In: T12137.00[Default] T12142.00[Default]
+Default Next Question: T12144.00
+--------------------------------------------------------------------------------
+T12182.00    [Q3-25.01]                                     Survey Year: 2008
+  PRIMARY VARIABLE
+
+ 
+             CREDIT HOURS EARNED AT COLLEGE 01 ATTENDED
+ 
+What (is/was) the total number of credit hours you (have) ever earned at [Name 
+of college or university respondent attended]([sch-loop1 counter])?
+ 
+      26           0
+     104           1 TO 24
+      74          25 TO 49
+      53          50 TO 74
+      22          75 TO 99
+      22         100 TO 124
+       4         125 TO 149
+       9         150 TO 174
+       4         175 TO 199
+       4         200 TO 224
+       2         250 TO 99999999: 250+
+  -------
+     324
+ 
+Refusal(-1)            0
+Don't Know(-2)        45
+TOTAL =========>     369   VALID SKIP(-4)    7388     NON-INTERVIEW(-5)    4929
+ 
+Min:              0        Max:            332        Mean:               48.18
+ 
+Lead In: T12179.00[Default]
+Default Next Question: T12185.00
+--------------------------------------------------------------------------------
+T12183.00    [Q3-25.02]                                     Survey Year: 2008
+  PRIMARY VARIABLE
+
+ 
+             CREDIT HOURS EARNED AT COLLEGE 02 ATTENDED
+ 
+What (is/was) the total number of credit hours you (have) ever earned at [Name 
+of college or university respondent attended]([sch-loop1 counter])?
+ 
+       1           0
+      15           1 TO 24
+       2          25 TO 49
+       1          50 TO 74
+       3          75 TO 99
+       1         125 TO 149
+  -------
+      23
+ 
+Refusal(-1)            1
+Don't Know(-2)         1
+TOTAL =========>      25   VALID SKIP(-4)    7732     NON-INTERVIEW(-5)    4929
+ 
+Min:              0        Max:            148        Mean:               30.22
+ 
+Lead In: T12180.00[Default]
+Default Next Question: T12186.00
+--------------------------------------------------------------------------------
+T12184.00    [Q3-25.03]                                     Survey Year: 2008
+  PRIMARY VARIABLE
+
+ 
+             CREDIT HOURS EARNED AT COLLEGE 03 ATTENDED
+ 
+What (is/was) the total number of credit hours you (have) ever earned at [Name 
+of college or university respondent attended]([sch-loop1 counter])?
+ 
+       1          75 TO 99
+  -------
+       1
+ 
+Refusal(-1)            0
+Don't Know(-2)         0
+TOTAL =========>       1   VALID SKIP(-4)    7756     NON-INTERVIEW(-5)    4929
+ 
+Min:             78        Max:             78        Mean:                  78
+ 
+Lead In: T12181.00[Default]
+Default Next Question: T12187.00
+--------------------------------------------------------------------------------
+T20756.00    [Q12-6]                                        Survey Year: 2008
+  PRIMARY VARIABLE
+
+ 
+             NUMBER OF DRINKS RESPONDENT HAS ON AVERAGE DAY
+ 
+On the days that you drink, about how many drinks do you have on the average 
+day?  By a drink, we mean the equivalent of a can of beer, a glass of wine, or a
+shot glass of hard liquor.
+ 
+UNIVERSE: R has had alcohol in last month
+ 
+    1254           1
+    1470           2
+     668           3
+     330           4
+     134           5
+     220           6
+      18           7
+      46           8
+       1           9
+      68          10 TO 999: 10+
+  -------
+    4209
+ 
+Refusal(-1)            8
+Don't Know(-2)         7
+TOTAL =========>    4224   VALID SKIP(-4)    3533     NON-INTERVIEW(-5)    4929
+ 
+Min:              1        Max:             49        Mean:                2.61
+ 
+Lead In: T20755.00[Default]
+Default Next Question: T20757.00
+--------------------------------------------------------------------------------
+T22108.00    [AGEATINT]                                     Survey Year: 2008
+  PRIMARY VARIABLE
+
+ 
+             AGE OF R AT INTERVIEW DATE
+ 
+COMMENT: Age at interview date
+ 
+     585          43
+    1072          44
+    1101          45
+    1075          46
+    1080          47
+     965          48
+     818          49
+     838          50
+     222          51
+       1          52
+  -------
+    7757
+ 
+Refusal(-1)            0
+Don't Know(-2)         0
+TOTAL =========>    7757   VALID SKIP(-4)       0     NON-INTERVIEW(-5)    4929
+ 
+Min:             43        Max:             52        Mean:               46.64
+ 
+Lead In: T22107.00[Default]
+Default Next Question: T22108.01
+--------------------------------------------------------------------------------
+T22728.00    [Q3-4]                                         Survey Year: 2010
+  PRIMARY VARIABLE
+
+ 
+             HIGHEST GRADE COMPLETED
+ 
+What is the highest grade or year of regular school that you have completed and 
+gotten credit for?
+ 
+       1       1 1ST GRADE
+       2       2 2ND GRADE
+      13       3 3RD GRADE
+      10       4 4TH GRADE
+       9       5 5TH GRADE
+      29       6 6TH GRADE
+      33       7 7TH GRADE
+     100       8 8TH GRADE
+     190       9 9TH GRADE
+     309      10 10TH GRADE
+     463      11 11TH GRADE
+    2932      12 12TH GRADE
+     538      13 1ST YEAR COLLEGE
+     973      14 2ND YEAR COLLEGE
+     207      15 3RD YEAR COLLEGE
+    1025      16 4TH YEAR COLLEGE
+     119      17 5TH YEAR COLLEGE
+     344      18 6TH YEAR COLLEGE
+      99      19 7TH YEAR COLLEGE
+     148      20 8TH YEAR COLLEGE OR MORE
+       9      95 UNGRADED
+  -------
+    7553
+ 
+Refusal(-1)            0
+Don't Know(-2)        12
+TOTAL =========>    7565   VALID SKIP(-4)       0     NON-INTERVIEW(-5)    5121
+ 
+Min:              1        Max:             95        Mean:                13.3
+ 
+Lead In: T22722.00[Default] T22727.00[Default]
+Default Next Question: T22729.00
+--------------------------------------------------------------------------------
+T22761.00    [Q3-25.01]                                     Survey Year: 2010
+  PRIMARY VARIABLE
+
+ 
+             CREDIT HOURS EARNED AT COLLEGE 01 ATTENDED
+ 
+What (is/was) the total number of credit hours you (have) ever earned at [Name 
+of college or university respondent attended]([sch-loop1 counter])?
+ 
+      17           0
+     102           1 TO 24
+      48          25 TO 49
+      53          50 TO 74
+      25          75 TO 99
+      14         100 TO 124
+      11         125 TO 149
+       4         150 TO 174
+       3         175 TO 199
+       1         200 TO 224
+       1         225 TO 249
+       4         250 TO 99999999: 250+
+  -------
+     283
+ 
+Refusal(-1)            0
+Don't Know(-2)        45
+TOTAL =========>     328   VALID SKIP(-4)    7237     NON-INTERVIEW(-5)    5121
+ 
+Min:              0        Max:            700        Mean:               52.34
+ 
+Lead In: T22759.00[Default]
+Default Next Question: T22763.00
+--------------------------------------------------------------------------------
+T22762.00    [Q3-25.02]                                     Survey Year: 2010
+  PRIMARY VARIABLE
+
+ 
+             CREDIT HOURS EARNED AT COLLEGE 02 ATTENDED
+ 
+What (is/was) the total number of credit hours you (have) ever earned at [Name 
+of college or university respondent attended]([sch-loop1 counter])?
+ 
+       2           0
+       6           1 TO 24
+       2          25 TO 49
+       2          50 TO 74
+       3          75 TO 99
+       2         100 TO 124
+       1         200 TO 224
+  -------
+      18
+ 
+Refusal(-1)            0
+Don't Know(-2)         2
+TOTAL =========>      20   VALID SKIP(-4)    7545     NON-INTERVIEW(-5)    5121
+ 
+Min:              0        Max:            200        Mean:               53.94
+ 
+Lead In: T22760.00[Default]
+Default Next Question: T22764.00
+--------------------------------------------------------------------------------
+T30442.00    [Q12-6]                                        Survey Year: 2010
+  PRIMARY VARIABLE
+
+ 
+             NUMBER OF DRINKS RESPONDENT HAS ON AVERAGE DAY
+ 
+On the days that you drink, about how many drinks do you have on the average 
+day?  By a drink, we mean the equivalent of a can of beer, a glass of wine, or a
+shot glass of hard liquor.
+ 
+    1290           1
+    1461           2
+     645           3
+     301           4
+     130           5
+     214           6
+      23           7
+      36           8
+       7           9
+      47          10 TO 999: 10+
+  -------
+    4154
+ 
+Refusal(-1)            7
+Don't Know(-2)         9
+TOTAL =========>    4170   VALID SKIP(-4)    3395     NON-INTERVIEW(-5)    5121
+ 
+Min:              1        Max:             30        Mean:                2.51
+ 
+Lead In: T30441.00[Default]
+Default Next Question: T30443.00
+--------------------------------------------------------------------------------
+T31087.00    [AGEATINT]                                     Survey Year: 2010
+  PRIMARY VARIABLE
+
+ 
+             AGE OF R AT INTERVIEW DATE
+ 
+COMMENT: Age at interview date
+ 
+     652          45
+    1058          46
+    1080          47
+    1034          48
+    1071          49
+     907          50
+     794          51
+     816          52
+     153          53
+  -------
+    7565
+ 
+Refusal(-1)            0
+Don't Know(-2)         0
+TOTAL =========>    7565   VALID SKIP(-4)       0     NON-INTERVIEW(-5)    5121
+ 
+Min:             45        Max:             53        Mean:               48.55
+ 
+Lead In: T31086.00[Default]
+Default Next Question: T31087.01
+--------------------------------------------------------------------------------
+T32129.00    [Q3-4]                                         Survey Year: 2012
+  PRIMARY VARIABLE
+
+ 
+             HIGHEST GRADE COMPLETED
+ 
+What is the highest grade or year of regular school that you have completed and 
+gotten credit for?
+ 
+       1       1 1ST GRADE
+       3       2 2ND GRADE
+      10       3 3RD GRADE
+      10       4 4TH GRADE
+       6       5 5TH GRADE
+      30       6 6TH GRADE
+      32       7 7TH GRADE
+      97       8 8TH GRADE
+     186       9 9TH GRADE
+     284      10 10TH GRADE
+     446      11 11TH GRADE
+    2908      12 12TH GRADE
+     432      13 1ST YEAR COLLEGE
+     945      14 2ND YEAR COLLEGE
+     210      15 3RD YEAR COLLEGE
+     995      16 4TH YEAR COLLEGE
+     108      17 5TH YEAR COLLEGE
+     357      18 6TH YEAR COLLEGE
+      85      19 7TH YEAR COLLEGE
+     144      20 8TH YEAR COLLEGE OR MORE
+       4      95 UNGRADED
+  -------
+    7293
+ 
+Refusal(-1)            1
+Don't Know(-2)         6
+TOTAL =========>    7300   VALID SKIP(-4)       0     NON-INTERVIEW(-5)    5386
+ 
+Min:              1        Max:             95        Mean:               13.25
+ 
+Lead In: T32123.00[Default] T32128.00[Default]
+Default Next Question: T32130.00
+--------------------------------------------------------------------------------
+T32168.00    [Q3-25.01]                                     Survey Year: 2012
+  PRIMARY VARIABLE
+
+ 
+             CREDIT HOURS EARNED AT COLLEGE 01 ATTENDED
+ 
+What (is/was) the total number of credit hours you (have) ever earned at [Name 
+of college or university respondent attended]([sch-loop1 counter])?
+ 
+      19           0
+     101           1 TO 24
+      48          25 TO 49
+      39          50 TO 74
+      10          75 TO 99
+      23         100 TO 124
+      14         125 TO 149
+       7         150 TO 174
+       3         175 TO 199
+       5         200 TO 224
+       4         225 TO 249
+       1         250 TO 99999999: 250+
+  -------
+     274
+ 
+Refusal(-1)            1
+Don't Know(-2)        38
+TOTAL =========>     313   VALID SKIP(-4)    6987     NON-INTERVIEW(-5)    5386
+ 
+Min:              0        Max:            960        Mean:               55.99
+ 
+Lead In: T32165.00[Default]
+Default Next Question: T32171.00
+--------------------------------------------------------------------------------
+T32169.00    [Q3-25.02]                                     Survey Year: 2012
+  PRIMARY VARIABLE
+
+ 
+             CREDIT HOURS EARNED AT COLLEGE 02 ATTENDED
+ 
+What (is/was) the total number of credit hours you (have) ever earned at [Name 
+of college or university respondent attended]([sch-loop1 counter])?
+ 
+       2           0
+      11           1 TO 24
+       9          25 TO 49
+       5          50 TO 74
+       3          75 TO 99
+       2         100 TO 124
+       0         125 TO 149
+       0         150 TO 174
+       0         175 TO 199
+       0         200 TO 224
+       0         225 TO 249
+       0         250 TO 99999999: 250+
+  -------
+      32
+ 
+Refusal(-1)            0
+Don't Know(-2)         3
+TOTAL =========>      35   VALID SKIP(-4)    7265     NON-INTERVIEW(-5)    5386
+ 
+Min:              0        Max:            100        Mean:               37.75
+ 
+Lead In: T32166.00[Default]
+Default Next Question: T32172.00
+--------------------------------------------------------------------------------
+T32170.00    [Q3-25.03]                                     Survey Year: 2012
+  PRIMARY VARIABLE
+
+ 
+             CREDIT HOURS EARNED AT COLLEGE 03 ATTENDED
+ 
+What (is/was) the total number of credit hours you (have) ever earned at [Name 
+of college or university respondent attended]([sch-loop1 counter])?
+ 
+       0           0
+       7           1 TO 24
+       0          25 TO 49
+       0          50 TO 74
+       0          75 TO 99
+       1         100 TO 124
+       0         125 TO 149
+       0         150 TO 174
+       0         175 TO 199
+       0         200 TO 224
+       0         225 TO 249
+       0         250 TO 99999999: 250+
+  -------
+       8
+ 
+Refusal(-1)            0
+Don't Know(-2)         0
+TOTAL =========>       8   VALID SKIP(-4)    7292     NON-INTERVIEW(-5)    5386
+ 
+Min:              3        Max:            110        Mean:               25.13
+ 
+Lead In: T32167.00[Default]
+Default Next Question: T32173.00
+--------------------------------------------------------------------------------
+T39764.00    [Q12-6]                                        Survey Year: 2012
+  PRIMARY VARIABLE
+
+ 
+             NUMBER OF DRINKS RESPONDENT HAS ON AVERAGE DAY
+ 
+On the days that you drink, about how many drinks do you have on the average 
+day?  By a drink, we mean the equivalent of a can of beer, a glass of wine, or a
+shot glass of hard liquor.
+ 
+       0           0
+    1276           1
+    1383           2
+     648           3
+     241           4
+     122           5
+     190           6
+      19           7
+      33           8
+       2           9
+      53          10 TO 999: 10+
+  -------
+    3967
+ 
+Refusal(-1)            5
+Don't Know(-2)         7
+TOTAL =========>    3979   VALID SKIP(-4)    3321     NON-INTERVIEW(-5)    5386
+ 
+Min:              1        Max:             24        Mean:                2.46
+ 
+Lead In: T39763.00[Default]
+Default Next Question: T39765.00
+--------------------------------------------------------------------------------
+T41132.00    [AGEATINT]                                     Survey Year: 2012
+  PRIMARY VARIABLE
+
+ 
+             AGE OF R AT INTERVIEW DATE
+ 
+COMMENT: Age at interview date
+ 
+       0          40
+       0          41
+       0          42
+       0          43
+       0          44
+       0          45
+       0          46
+      57          47
+     845          48
+    1016          49
+    1028          50
+    1048          51
+     975          52
+     825          53
+     780          54
+     668          55
+      58          56
+  -------
+    7300
+ 
+Refusal(-1)            0
+Don't Know(-2)         0
+TOTAL =========>    7300   VALID SKIP(-4)       0     NON-INTERVIEW(-5)    5386
+ 
+Min:             47        Max:             56        Mean:               51.29
+ 
+Lead In: T41131.00[Default]
+Default Next Question: T41132.01
+--------------------------------------------------------------------------------
+T42011.00    [Q3-4]                                         Survey Year: 2014
+  PRIMARY VARIABLE
+
+ 
+             HIGHEST GRADE COMPLETED
+ 
+What is the highest grade or year of regular school that you have completed and 
+gotten credit for?
+ 
+       0       1 1ST GRADE
+       3       2 2ND GRADE
+       9       3 3RD GRADE
+      12       4 4TH GRADE
+       7       5 5TH GRADE
+      29       6 6TH GRADE
+      29       7 7TH GRADE
+     100       8 8TH GRADE
+     166       9 9TH GRADE
+     256      10 10TH GRADE
+     410      11 11TH GRADE
+    2878      12 12TH GRADE
+     414      13 1ST YEAR COLLEGE
+     875      14 2ND YEAR COLLEGE
+     198      15 3RD YEAR COLLEGE
+     974      16 4TH YEAR COLLEGE
+     111      17 5TH YEAR COLLEGE
+     328      18 6TH YEAR COLLEGE
+      69      19 7TH YEAR COLLEGE
+     188      20 8TH YEAR COLLEGE OR MORE
+       8      95 UNGRADED
+  -------
+    7064
+ 
+Refusal(-1)            3
+Don't Know(-2)         3
+TOTAL =========>    7070   VALID SKIP(-4)       0     NON-INTERVIEW(-5)    5616
+ 
+Min:              2        Max:             95        Mean:               13.34
+ 
+Lead In: T42004.00[Default] T42010.00[Default]
+Default Next Question: T42012.00
+--------------------------------------------------------------------------------
+T42065.00    [Q3-25.01]                                     Survey Year: 2014
+  PRIMARY VARIABLE
+
+ 
+             CREDIT HOURS EARNED AT COLLEGE 01 ATTENDED
+ 
+What (is/was) the total number of credit hours you (have) ever earned at [Name 
+of college or university respondent attended]([sch-loop1 counter])?
+ 
+      11           0
+      70           1 TO 24
+      30          25 TO 49
+      31          50 TO 74
+       9          75 TO 99
+      17         100 TO 124
+       9         125 TO 149
+       3         150 TO 174
+       4         175 TO 199
+       2         200 TO 224
+       1         225 TO 249
+       1         250 TO 99999999: 250+
+  -------
+     188
+ 
+Refusal(-1)            0
+Don't Know(-2)        30
+TOTAL =========>     218   VALID SKIP(-4)    6852     NON-INTERVIEW(-5)    5616
+ 
+Min:              0        Max:            250        Mean:               52.73
+ 
+Lead In: T42062.00[Default]
+Default Next Question: T42068.00
+--------------------------------------------------------------------------------
+T42066.00    [Q3-25.02]                                     Survey Year: 2014
+  PRIMARY VARIABLE
+
+ 
+             CREDIT HOURS EARNED AT COLLEGE 02 ATTENDED
+ 
+What (is/was) the total number of credit hours you (have) ever earned at [Name 
+of college or university respondent attended]([sch-loop1 counter])?
+ 
+      10           1 TO 24
+       2          25 TO 49
+       1          50 TO 74
+  -------
+      13
+ 
+Refusal(-1)            1
+Don't Know(-2)         1
+TOTAL =========>      15   VALID SKIP(-4)    7055     NON-INTERVIEW(-5)    5616
+ 
+Min:              3        Max:             50        Mean:               15.77
+ 
+Lead In: T42063.00[Default]
+Default Next Question: T42069.00
+--------------------------------------------------------------------------------
+T42067.00    [Q3-25.03]                                     Survey Year: 2014
+  PRIMARY VARIABLE
+
+ 
+             CREDIT HOURS EARNED AT COLLEGE 03 ATTENDED
+ 
+What (is/was) the total number of credit hours you (have) ever earned at [Name 
+of college or university respondent attended]([sch-loop1 counter])?
+ 
+  -------
+       0
+ 
+Refusal(-1)            1
+Don't Know(-2)         0
+TOTAL =========>       1   VALID SKIP(-4)    7069     NON-INTERVIEW(-5)    5616
+ 
+Min:        Max:        Mean:                   0
+ 
+Lead In: T42064.00[Default]
+Default Next Question: T42070.00
+--------------------------------------------------------------------------------
+T49147.00    [Q12-6]                                        Survey Year: 2014
+  PRIMARY VARIABLE
+
+ 
+             NUMBER OF DRINKS RESPONDENT HAS ON AVERAGE DAY
+ 
+On the days that you drink, about how many drinks do you have on the average 
+day?  By a drink, we mean the equivalent of a can of beer, a glass of wine, or a
+shot glass of hard liquor.
+ 
+    1317           1
+    1400           2
+     608           3
+     258           4
+      84           5
+     141           6
+      21           7
+      20           8
+       3           9
+      42          10 TO 999: 10+
+  -------
+    3894
+ 
+Refusal(-1)            9
+Don't Know(-2)        11
+Invalid Skip(-3)       1
+TOTAL =========>    3915   VALID SKIP(-4)    3155     NON-INTERVIEW(-5)    5616
+ 
+Min:              1        Max:             30        Mean:                2.34
+ 
+Lead In: T49146.00[Default]
+Default Next Question: T49148.00
+--------------------------------------------------------------------------------
+T50066.00    [LIFE-SATISFACTION]                            Survey Year: 2014
+  PRIMARY VARIABLE
+
+ 
+             R SATISFACTION WITH LIFE
+ 
+How dissatisfied or satisfied are you with your life overall?
+ 
+     188       1 1 (not at all satisfied)
+      88       2 2
+     192       3 3
+     366       4 4
+    1542       5 5
+    1974       6 6
+    2692       7 7 (completely satisfied)
+  -------
+    7042
+ 
+Refusal(-1)           13
+Don't Know(-2)         9
+Invalid Skip(-3)       1
+TOTAL =========>    7065   VALID SKIP(-4)       5     NON-INTERVIEW(-5)    5616
+ 
+Min:              1        Max:              7        Mean:                5.79
+ 
+Lead In: T50065.00[Default]  T50062.00[0:0] T50064.00[0:0]
+Default Next Question: T50067.00
+--------------------------------------------------------------------------------
+T50236.00    [AGEATINT]                                     Survey Year: 2014
+  PRIMARY VARIABLE
+
+ 
+             AGE AT INTERVIEW
+ 
+COMMENT: Age at interview date
+ 
+       1          49
+     704          50
+    1004          51
+    1006          52
+     975          53
+     976          54
+     837          55
+     756          56
+     746          57
+      65          58
+  -------
+    7070
+ 
+Refusal(-1)            0
+Don't Know(-2)         0
+TOTAL =========>    7070   VALID SKIP(-4)       0     NON-INTERVIEW(-5)    5616
+ 
+Min:             49        Max:             58        Mean:               53.44
+ 
+Lead In: T50235.00[Default]
+Default Next Question: T50237.00
+--------------------------------------------------------------------------------
+T51761.00    [Q3-4]                                         Survey Year: 2016
+  PRIMARY VARIABLE
+
+ 
+             HIGHEST GRADE COMPLETED
+ 
+What is the highest grade or year of regular school that you have completed and 
+gotten credit for?
+ 
+       0       1 1ST GRADE
+       0       2 2ND GRADE
+       1       3 3RD GRADE
+       0       4 4TH GRADE
+       0       5 5TH GRADE
+       0       6 6TH GRADE
+       0       7 7TH GRADE
+       0       8 8TH GRADE
+       0       9 9TH GRADE
+       2      10 10TH GRADE
+       2      11 11TH GRADE
+      23      12 12TH GRADE
+      11      13 1ST YEAR COLLEGE
+      30      14 2ND YEAR COLLEGE
+      15      15 3RD YEAR COLLEGE
+      34      16 4TH YEAR COLLEGE
+       7      17 5TH YEAR COLLEGE
+      17      18 6TH YEAR COLLEGE
+       7      19 7TH YEAR COLLEGE
+      24      20 8TH YEAR COLLEGE OR MORE
+       1      95 UNGRADED
+  -------
+     174
+ 
+Refusal(-1)            0
+Don't Know(-2)         0
+TOTAL =========>     174   VALID SKIP(-4)    6738     NON-INTERVIEW(-5)    5774
+ 
+Min:              3        Max:             95        Mean:               16.01
+ 
+Lead In: T51760.00[Default]
+Default Next Question: T51762.00
+--------------------------------------------------------------------------------
+T51806.00    [Q3-25.01]                                     Survey Year: 2016
+  PRIMARY VARIABLE
+
+ 
+             CREDIT HOURS EARNED AT COLLEGE 01 ATTENDED
+ 
+What (is/was) the total number of credit hours you (have) ever earned at [Name 
+of college or university respondent attended]([sch-loop1 counter])?
+ 
+       2           0
+      38           1 TO 24
+      35          25 TO 49
+      14          50 TO 74
+       7          75 TO 99
+      14         100 TO 124
+       7         125 TO 149
+       6         150 TO 174
+       3         175 TO 199
+       1         250 TO 99999999: 250+
+  -------
+     127
+ 
+Refusal(-1)            0
+Don't Know(-2)        19
+TOTAL =========>     146   VALID SKIP(-4)    6766     NON-INTERVIEW(-5)    5774
+ 
+Min:              0        Max:            428        Mean:               59.44
+ 
+Lead In: T51804.00[Default]
+Default Next Question: T51808.00
+--------------------------------------------------------------------------------
+T51807.00    [Q3-25.02]                                     Survey Year: 2016
+  PRIMARY VARIABLE
+
+ 
+             CREDIT HOURS EARNED AT COLLEGE 02 ATTENDED
+ 
+What (is/was) the total number of credit hours you (have) ever earned at [Name 
+of college or university respondent attended]([sch-loop1 counter])?
+ 
+       3           1 TO 24
+       1          50 TO 74
+       1          75 TO 99
+  -------
+       5
+ 
+Refusal(-1)            0
+Don't Know(-2)         1
+TOTAL =========>       6   VALID SKIP(-4)    6906     NON-INTERVIEW(-5)    5774
+ 
+Min:              4        Max:             78        Mean:                32.6
+ 
+Lead In: T51805.00[Default]
+Default Next Question: T51809.00
+--------------------------------------------------------------------------------
+T57407.00    [LIFE-SATISFACTION]                            Survey Year: 2016
+  PRIMARY VARIABLE
+
+ 
+             R SATISFACTION WITH LIFE
+ 
+How dissatisfied or satisfied are you with your life overall?
+ 
+     190       1 1 (not at all satisfied)
+      89       2 2
+     235       3 3
+     398       4 4
+    1637       5 5
+    1780       6 6
+    2564       7 7 (completely satisfied)
+  -------
+    6893
+ 
+Refusal(-1)            7
+Don't Know(-2)         9
+TOTAL =========>    6909   VALID SKIP(-4)       3     NON-INTERVIEW(-5)    5774
+ 
+Min:              1        Max:              7        Mean:                5.73
+ 
+Lead In: T57406.00[Default]  T57398.00[1:1]
+Default Next Question: T57408.00
+--------------------------------------------------------------------------------
+T57715.00    [AGEATINT]                                     Survey Year: 2016
+  PRIMARY VARIABLE
+
+ 
+             AGE AT INTERVIEW
+ 
+COMMENT: Age at interview date
+ 
+      13          51
+     720          52
+     957          53
+     991          54
+     961          55
+     964          56
+     773          57
+     762          58
+     690          59
+      81          60
+  -------
+    6912
+ 
+Refusal(-1)            0
+Don't Know(-2)         0
+TOTAL =========>    6912   VALID SKIP(-4)       0     NON-INTERVIEW(-5)    5774
+ 
+Min:             51        Max:             60        Mean:               55.41
+ 
+Lead In: T57714.00[Default]
+Default Next Question: T57716.00
+--------------------------------------------------------------------------------
+T77439.00    [Q3-4]                                         Survey Year: 2018
+  PRIMARY VARIABLE
+
+ 
+             HIGHEST GRADE COMPLETED
+ 
+What is the highest grade or year of regular school that you have completed and 
+gotten credit for?
+ 
+       0       1 1ST GRADE
+       0       2 2ND GRADE
+       0       3 3RD GRADE
+       1       4 4TH GRADE
+       0       5 5TH GRADE
+       0       6 6TH GRADE
+       0       7 7TH GRADE
+       1       8 8TH GRADE
+       0       9 9TH GRADE
+       1      10 10TH GRADE
+       4      11 11TH GRADE
+      18      12 12TH GRADE
+       6      13 1ST YEAR COLLEGE
+      17      14 2ND YEAR COLLEGE
+      10      15 3RD YEAR COLLEGE
+      24      16 4TH YEAR COLLEGE
+       3      17 5TH YEAR COLLEGE
+       5      18 6TH YEAR COLLEGE
+       4      19 7TH YEAR COLLEGE
+      19      20 8TH YEAR COLLEGE OR MORE
+       3      95 UNGRADED
+  -------
+     116
+ 
+Refusal(-1)            0
+Don't Know(-2)         1
+TOTAL =========>     117   VALID SKIP(-4)    6761     NON-INTERVIEW(-5)    5808
+ 
+Min:              4        Max:             95        Mean:               17.36
+ 
+Lead In: T77438.00[Default]
+Default Next Question: T77440.00
+--------------------------------------------------------------------------------
+T77499.00    [Q3-25.01]                                     Survey Year: 2018
+  PRIMARY VARIABLE
+
+ 
+             CREDIT HOURS EARNED AT COLLEGE 01 ATTENDED
+ 
+What [is/was] the total number of credit hours you (have) ever earned at [Name 
+of college or university respondent attended]([sch-loop1 counter])?
+ 
+       4           0
+      19           1 TO 24
+      22          25 TO 49
+       8          50 TO 74
+      11          75 TO 99
+       4         100 TO 124
+       1         125 TO 149
+       3         150 TO 174
+       1         175 TO 199
+       1         200 TO 224
+       1         225 TO 249
+       4         250 TO 99999999: 250+
+  -------
+      79
+ 
+Refusal(-1)            0
+Don't Know(-2)         9
+TOTAL =========>      88   VALID SKIP(-4)    6790     NON-INTERVIEW(-5)    5808
+ 
+Min:              0        Max:            999        Mean:                85.9
+ 
+Lead In: T77496.00[Default]
+Default Next Question: T77502.00
+--------------------------------------------------------------------------------
+T77500.00    [Q3-25.02]                                     Survey Year: 2018
+  PRIMARY VARIABLE
+
+ 
+             CREDIT HOURS EARNED AT COLLEGE 02 ATTENDED
+ 
+What [is/was] the total number of credit hours you (have) ever earned at [Name 
+of college or university respondent attended]([sch-loop1 counter])?
+ 
+       1           0
+       4           1 TO 24
+       1          25 TO 49
+       1          75 TO 99
+       1         100 TO 124
+  -------
+       8
+ 
+Refusal(-1)            0
+Don't Know(-2)         2
+TOTAL =========>      10   VALID SKIP(-4)    6868     NON-INTERVIEW(-5)    5808
+ 
+Min:              0        Max:            124        Mean:               38.75
+ 
+Lead In: T77497.00[Default]
+Default Next Question: T77503.00
+--------------------------------------------------------------------------------
+T77501.00    [Q3-25.03]                                     Survey Year: 2018
+  PRIMARY VARIABLE
+
+ 
+             CREDIT HOURS EARNED AT COLLEGE 03 ATTENDED
+ 
+What [is/was] the total number of credit hours you (have) ever earned at [Name 
+of college or university respondent attended]([sch-loop1 counter])?
+ 
+       3           1 TO 24
+  -------
+       3
+ 
+Refusal(-1)            0
+Don't Know(-2)         1
+TOTAL =========>       4   VALID SKIP(-4)    6874     NON-INTERVIEW(-5)    5808
+ 
+Min:              3        Max:             20        Mean:                8.67
+ 
+Lead In: T77498.00[Default]
+Default Next Question: T77504.00
+--------------------------------------------------------------------------------
+T81878.00    [LIFE-SATISFACTION]                            Survey Year: 2018
+  PRIMARY VARIABLE
+
+ 
+             R SATISFACTION WITH LIFE
+ 
+How dissatisfied or satisfied are you with your life overall?
+ 
+     176       1 1 (not at all satisfied)
+      70       2 2
+     196       3 3
+     376       4 4
+    1583       5 5
+    1662       6 6
+    2795       7 7 (completely satisfied)
+  -------
+    6858
+ 
+Refusal(-1)            7
+Don't Know(-2)         7
+TOTAL =========>    6872   VALID SKIP(-4)       6     NON-INTERVIEW(-5)    5808
+ 
+Min:              1        Max:              7        Mean:                5.81
+ 
+Lead In: T81877.00[Default]  T81869.00[1:1]
+Default Next Question: T81879.00
+--------------------------------------------------------------------------------
+T82194.00    [AGEATINT]                                     Survey Year: 2018
+  PRIMARY VARIABLE
+
+ 
+             AGE AT INTERVIEW
+ 
+COMMENT: Age at interview date
+ 
+      43          53
+     803          54
+     969          55
+     982          56
+     979          57
+     929          58
+     756          59
+     734          60
+     643          61
+      40          62
+  -------
+    6878
+ 
+Refusal(-1)            0
+Don't Know(-2)         0
+TOTAL =========>    6878   VALID SKIP(-4)       0     NON-INTERVIEW(-5)    5808
+ 
+Min:             53        Max:             62        Mean:               57.28
+ 
+Lead In: T82193.00[Default]
+Default Next Question: T82195.00
