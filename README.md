@@ -33,7 +33,7 @@ used to be stored on magnetic tape reels (imagine like a bigger, older version
 of a music tape cassette) and because data storage was much more expensive,
 certain techniques were used to maximize the density with which data was stored.
 
-![CDC 679-6 Magnetic Tape Transport](https://upload.wikimedia.org/wikipedia/commons/6/61/CDC_679-6_Magnetic_Tape_Transport.jpg)
+<img src="https://upload.wikimedia.org/wikipedia/commons/6/61/CDC_679-6_Magnetic_Tape_Transport.jpg" width="250px" alt="CDC 679-6 Magnetic Tape Transport"/>
 
 The most salient aspect that researchers need to deal with on a regular basis is
 figuring out how to deal with what are called "fixed width files" where every 
