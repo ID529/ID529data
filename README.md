@@ -47,12 +47,26 @@ If you open up the file, you'll find a couple things:
   4. Basically all of it is numeric data.  Some of them are integers and some are 
      real valued (i.e., decimal numbers)
 
-![NHANES fixed width data zoomed out](images/NHANES_wide.png)
-
 ![NHANES fixed width data zoomed in](images/NHANES_zoomed.png)
 
 You can find the documentation for NHANES III here:
-<https://wwwn.cdc.gov/nchs/nhanes/nhanes3/datafiles.aspx#core>
+<https://wwwn.cdc.gov/nchs/nhanes/nhanes3/default.aspx>.  The documentation
+explains in details how all of this data is structured, but the basic story goes: 
+you hunt through the documentation for whatever variable you're looking for, it 
+tells you what "position" it's in (meaning, what columns, and often that's a range, like for example
+household size is in columns 27-28).
+
+One of the most important aspects to pay attention to in using any survey data 
+is the use of survey weights and sampling strata.  Documentation from NHANES on their creation and 
+recommended usage of the survey weights and sampling strata included is available 
+here <https://wwwn.cdc.gov/nchs/data/nhanes3/manuals/wgt_exec.pdf>.
+
+Two modern tools available in R will be indespensible in dealing with these 
+data in a way that doesn't make you pull your hair out: 
+
+  - [read_fwf](https://readr.tidyverse.org/reference/read_fwf.html), and 
+  - the [survey](https://cran.r-project.org/web/packages/survey/index.html) package, which helps users to handle survey strata and weighting
+  as described [here](https://stats.oarc.ucla.edu/r/faq/how-do-i-analyze-survey-data-with-a-stratified-design-with-certainty-psus/)
 
 ### CDC WONDER
 
