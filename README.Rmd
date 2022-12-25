@@ -59,6 +59,12 @@ labelled::generate_dictionary(nhanes, details = 'full')
  18  fish_energy                                              Calories from fish in dietary recall [kCal]                                                                         dbl      range: 0 - 1518     
 ```
 
+For any single variable, the description can be retrieved using `var_label` from the `labelled` package. 
+
+```{r}
+labelled::var_label(x = nhanes$poverty_ratio)
+```
+
 ## Correlation among quantitative variables
 
 ```{r correlation figure, message = FALSE, fig.width = 14, fig.height = 12}

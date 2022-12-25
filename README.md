@@ -59,6 +59,15 @@ labelled::generate_dictionary(nhanes, details = 'full')
  18  fish_energy                                              Calories from fish in dietary recall [kCal]                                                                         dbl      range: 0 - 1518     
 ```
 
+For any single variable, the description can be retrieved using
+`var_label` from the `labelled` package.
+
+``` r
+labelled::var_label(x = nhanes$poverty_ratio)
+```
+
+    ## [1] "Ratio of Household Income to US Federal Poverty Line. The value was not computed if the respondent only reported income as < $20,000 or ≥ $20,000. If family income was reported as a more detailed category, the midpoint of the range was used to compute the ratio. Values at or above 5.00 were coded as 5.00 or more because of disclosure concerns."
+
 ## Correlation among quantitative variables
 
 ``` r
