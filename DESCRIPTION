@@ -1,11 +1,21 @@
 Package: ID529data
 Type: Package
-Title: What the Package Does (Title Case)
+Title: Contains Example Datasets for ID529
 Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
-License: What license is it under?
+Author: Christian Testa
+Maintainer: Christian Testa <ctesta@hsph.harvard.edu>
+Description: This package contains an example dataset for the course
+  ID529 Data Management and Analytic Workflows in R: data from the 
+  NHANES 2013-2014 cycle on socio-demographics, PFAS in the blood, and dietary
+  patterns.
+License: MIT
 Encoding: UTF-8
 LazyData: true
+Depends:
+    labelled,
+    R (>= 3.4)
+Suggests: 
+  RNHANES,
+  tidyvese,
+  dplyr
+RoxygenNote: 7.2.0
