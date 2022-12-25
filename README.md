@@ -1,11 +1,10 @@
----
-title: "Teaching Dataset for ID529 — Data Management and Analytic Workflows in R  <a href='https://id529.github.io'><img src='https://github.com/ID529/lectures/raw/testa_dec19/graphics/id529-sticker.png' align='right' height='139' /></a>"
-output: github_document
----
+Teaching Dataset for ID529 — Data Management and Analytic Workflows in R
+<a href='https://id529.github.io'><img src='https://github.com/ID529/lectures/raw/testa_dec19/graphics/id529-sticker.png' align='right' height='139' /></a>
+================
 
-This is an R package that you can install with the following R code: 
+This is an R package that you can install with the following R code:
 
-```r
+``` r
 # install devtools if you haven't already
 install.packages("devtools")
 
@@ -13,19 +12,25 @@ library(devtools)
 devtools::install_github("ID529/ID529data")
 ```
 
-Once you've installed the package, you can load the package and the `nhanes`
-dataset built into it. This will be our primary dataset for teaching examples.
+Once you’ve installed the package, you can load the package and the
+`nhanes` dataset built into it. This will be our primary dataset for
+teaching examples.
 
-```{r}
+``` r
 library(ID529data)
+```
+
+    ## Loading required package: labelled
+
+``` r
 data(nhanes)
 ```
 
-```{r, echo=TRUE, eval=FALSE}
+``` r
 generate_dictionary(nhanes, details = 'full')
 ```
 
-```{txt, echo=TRUE, eval=FALSE}
+``` txt
  pos variable                                                 label                                                                                                               col_type values              
  1   id                                                       —                                                                                                                   chr      range: 73568 - 83726
  2   race_ethnicity                                           Race/Ethnicity                                                                                                      fct      Non-Hispanic White  
@@ -52,9 +57,13 @@ generate_dictionary(nhanes, details = 'full')
 
 ### Correlation among quantitative variables
 
-```{r correlation figure, fig.width = 14, fig.height = 12}
+``` r
 library(ggcorrplot)
+```
 
+    ## Loading required package: ggplot2
+
+``` r
 cor_mat <- cor(nhanes %>% dplyr::select(where(is.numeric)), use = 'pairwise.complete.obs')
 
 ggcorrplot::ggcorrplot(
@@ -66,3 +75,5 @@ ggcorrplot::ggcorrplot(
   colors = c("#6D9EC1", "white", "#E46726"),
   lab = TRUE)
 ```
+
+![](README_files/figure-gfm/correlation%20figure-1.png)<!-- -->
