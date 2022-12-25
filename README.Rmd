@@ -16,13 +16,22 @@ devtools::install_github("ID529/ID529data")
 Once you've installed the package, you can load the package and the `nhanes`
 dataset built into it. This will be our primary dataset for teaching examples.
 
-```{r}
+```{r, message=FALSE}
 library(ID529data)
-data(nhanes)
+data(nhanes, package = 'ID529data')
 ```
 
+## Documentation
+
+The documentation for the dataset can be accessed by running `?nhanes` after
+loading the data.
+
+## Data Labels
+
+The data comes with a built-in data dictionary:
+
 ```{r, echo=TRUE, eval=FALSE}
-generate_dictionary(nhanes, details = 'full')
+labelled::generate_dictionary(nhanes, details = 'full')
 ```
 
 ```{txt, echo=TRUE, eval=FALSE}
@@ -50,9 +59,9 @@ generate_dictionary(nhanes, details = 'full')
  18  fish_energy                                              Calories from fish in dietary recall [kCal]                                                                         dbl      range: 0 - 1518     
 ```
 
-### Correlation among quantitative variables
+## Correlation among quantitative variables
 
-```{r correlation figure, fig.width = 14, fig.height = 12}
+```{r correlation figure, message = FALSE, fig.width = 14, fig.height = 12}
 library(ggcorrplot)
 
 cor_mat <- cor(nhanes %>% dplyr::select(where(is.numeric)), use = 'pairwise.complete.obs')

@@ -18,16 +18,20 @@ teaching examples.
 
 ``` r
 library(ID529data)
+data(nhanes, package = 'ID529data')
 ```
 
-    ## Loading required package: labelled
+## Documentation
+
+The documentation for the dataset can be accessed by running `?nhanes`
+after loading the data.
+
+## Data Labels
+
+The data comes with a built-in data dictionary:
 
 ``` r
-data(nhanes)
-```
-
-``` r
-generate_dictionary(nhanes, details = 'full')
+labelled::generate_dictionary(nhanes, details = 'full')
 ```
 
 ``` txt
@@ -55,15 +59,11 @@ generate_dictionary(nhanes, details = 'full')
  18  fish_energy                                              Calories from fish in dietary recall [kCal]                                                                         dbl      range: 0 - 1518     
 ```
 
-### Correlation among quantitative variables
+## Correlation among quantitative variables
 
 ``` r
 library(ggcorrplot)
-```
 
-    ## Loading required package: ggplot2
-
-``` r
 cor_mat <- cor(nhanes %>% dplyr::select(where(is.numeric)), use = 'pairwise.complete.obs')
 
 ggcorrplot::ggcorrplot(
