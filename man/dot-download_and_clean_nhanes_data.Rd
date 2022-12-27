@@ -7,5 +7,11 @@
 .download_and_clean_nhanes_data()
 }
 \description{
-This function downloads NHANES data, cleans it, and stores it inside this package
+This function downloads NHANES data, cleans it, and stores it inside this
+package. This function is meant for the ID529data package developers to use
+and is not exported for general use.  The source code may be useful to
+reference for people interested in how the data were created.
+}
+\seealso{
+nhanes
 }

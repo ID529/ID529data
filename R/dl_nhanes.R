@@ -14,9 +14,19 @@
 
 #' Download and Clean NHNAES data
 #'
-#' This function downloads NHANES data, cleans it, and stores it inside this package
+#' This function downloads NHANES data, cleans it, and stores it inside this
+#' package. This function is meant for the ID529data package developers to use
+#' and is not exported for general use.  The source code may be useful to
+#' reference for people interested in how the data were created.
 #'
+#' @seealso nhanes
 .download_and_clean_nhanes_data <- function() {
+
+  # package requirements for this function
+  # these are listed in the Suggests dependencies for this package
+  require(RNHANES)
+  require(tidyverse)
+  require(testthat)
 
   ###### Download data #####
 
@@ -97,6 +107,17 @@
     "2003-2004", "OHQ_C"
   )
 
+  #blood pressure files
+  bp_files <- tribble(
+    ~cycle,      ~file_name,
+    "2013-2014", "BPX_H",
+    "2011-2012", "BPX_G",
+    "2009-2010", "BPX_F",
+    "2007-2008", "BPX_E",
+    "2005-2006", "BPX_D",
+    "2003-2004", "BPX_C"
+  )
+
 
 
   cat("Downloading data. Warning: downloading the data for the first time takes a while.\n")
@@ -134,6 +155,11 @@
   nhanes_oh_data <-            nhanes_load_data(file_name = oh_files$file_name,
                                                 year = oh_files$cycle,
                                                 destination = "./inst/raw-data/NHANES_EHP_suppl_materials")
+
+  nhanes_bp_data <-            nhanes_load_data(file_name = bp_files$file_name,
+                                                  year = bp_files$cycle,
+                                                  destination = "./inst/raw-data/NHANES_EHP_suppl_materials")
+
 
   ###### Clean PFAS data #####
 
@@ -244,9 +270,6 @@
     bind_rows() %>%
     select(SEQN, DR1IKCAL, DR1FS, DR1ITFAT, DR1IFDCD, DR1_040Z) %>%
     filter(!is.na(DR1FS))
-
-  cat(paste0("Writing raw diet dataset to inst/clean-data/NHANES_EHP/nhanes_combined_diet_data_raw.csv (", nrow(nhanes_combined_diet_data_raw), " rows)\n"))
-  write_csv(nhanes_combined_diet_data_raw, "inst/clean-data/NHANES_EHP/nhanes_combined_diet_data_raw.csv")
 
   nhanes_combined_diet_data <- nhanes_combined_diet_data_raw %>%
     group_by(SEQN) %>%
@@ -378,10 +401,11 @@
            aquatic_sum = fish_sum + shellfish_sum)
 
   ###### Clean BMI data #####
+  #_#_# AHz: add in height (cm) and weight (kg)
 
   nhanes_combined_bmi_data <- nhanes_bmi_data %>%
     bind_rows() %>%
-    select(SEQN, BMXBMI)
+    select(SEQN, BMXBMI, BMXWT, BMXHT)
 
 
   ###### Clean FFQ data #####
@@ -411,6 +435,17 @@
     select(SEQN, OHQ870) %>%
     rename(days_dental_floss = OHQ870)
 
+  ###### Clean BP data #####
+
+  nhanes_combined_bp_data <- nhanes_bp_data %>%
+    bind_rows() %>%
+    select(SEQN, BPXSY1, BPXSY2, BPXSY3) %>%
+    pivot_longer(names_to = "measurement_num", values_to = "BP", c(BPXSY1, BPXSY2, BPXSY3)) %>%
+    group_by(SEQN) %>%
+    summarize(mean_BP = mean(BP, na.rm = TRUE),
+              n_readings = length(which(!is.na(BP))))
+
+
   ##### Create Master Dataset #####
 
   nhanes_data <- reduce(list(nhanes_combined_pfas_data,
@@ -419,7 +454,8 @@
                              nhanes_combined_diet_data,
                              nhanes_combined_nutrition_data,
                              nhanes_combined_ffq_data,
-                             nhanes_combined_oh_data),
+                             nhanes_combined_oh_data,
+                             nhanes_combined_bp_data),
                         left_join,
                         by = "SEQN")
 
@@ -448,6 +484,21 @@
   cat(paste("Requirement 4:", (count_qualifying(nhanes_data3) - count_qualifying(nhanes_data4)),
             "more participants excluded for not having BMI data\n"))
 
+  ## Has height/weight data
+  nhanes_data5 <- nhanes_data4 %>% mutate(qualifying = qualifying & !is.na(BMXHT) & !is.na(BMXWT))
+  cat(paste("Requirement 5:", (count_qualifying(nhanes_data4) - count_qualifying(nhanes_data5)),
+            "more participants excluded for not having height/weight data\n"))
+
+  ## Has age data
+  nhanes_data6 <- nhanes_data5 %>% mutate(qualifying = qualifying & !is.na(RIDAGEYR))
+  cat(paste("Requirement 6:", (count_qualifying(nhanes_data5) - count_qualifying(nhanes_data6)),
+            "more participants excluded for not having age data\n"))
+
+  ## Has blood pressure data
+  nhanes_data7 <- nhanes_data6 %>% mutate(qualifying = qualifying & !is.na(mean_BP))
+  cat(paste("Requirement 7:", (count_qualifying(nhanes_data5) - count_qualifying(nhanes_data6)),
+            "more participants excluded for not having blood pressure data\n"))
+
   # filter for just 2013-2014
   nhanes_data4_13_14 <- nhanes_data4 %>% filter(cycle == '2013-2014')
 
@@ -457,6 +508,7 @@
       SEQN,
       race_cat,
       sex_cat,
+      RIDAGEYR,
       INDFMPIR,
       days_dental_floss,
       LBXSUMPFAS,
@@ -471,7 +523,11 @@
       non_fast_food_or_restaurant_energy_no_popcorn_no_seafood,
       popcorn_energy,
       shellfish_energy,
-      fish_energy
+      fish_energy,
+      mean_BP,
+      BMXWT,
+      BMXHT
+
     )
 
   # rename some variables with more friendly names
@@ -480,6 +536,9 @@
       id = SEQN,
       race_ethnicity = race_cat,
       sex_gender = sex_cat,
+      age = RIDAGEYR,
+      weight = BMXWT,
+      height = BMXHT,
       poverty_ratio = INDFMPIR,
       PFAS_total = LBXSUMPFAS,
       PFOS = LBXPFOS,
@@ -489,13 +548,14 @@
       PFDE = LBXPFDE
     )
 
-  df$id %<>% as.character() # convert ID to a character so it doesn't act like a numeric
+  df$id <- df$id %>%  as.character() # convert ID to a character so it doesn't act like a numeric
   df$days_dental_floss[df$days_dental_floss == 99] <- NA # code missing values
 
   # add labels for the columns
   var_label(df$id) <- "Unique identifier for individuals in NHANES"
   var_label(df$race_ethnicity) <- "Race/Ethnicity"
   var_label(df$sex_gender) <- "Sex/Gender [as binary]"
+  var_label(df$age) <- "Age [in years] at screening"
   var_label(df$poverty_ratio) <- "Ratio of Household Income to US Federal Poverty Line. The value was not computed if the respondent only reported income as < $20,000 or ≥ $20,000. If family income was reported as a more detailed category, the midpoint of the range was used to compute the ratio. Values at or above 5.00 were coded as 5.00 or more because of disclosure concerns."
   var_label(df$days_dental_floss) <- "Days [Reported] Respondents Floss per Week [days/week]"
   var_label(df$PFAS_total) <- "Perfluoroalkyl and Polyfluoroalkyl Substances [ng/mL]"
@@ -511,6 +571,9 @@
   var_label(df$popcorn_energy) <- "Calories from popcorn in dietary recall [kCal]"
   var_label(df$shellfish_energy) <- "Calories from shellfish in dietary recall [kCal]"
   var_label(df$fish_energy) <- "Calories from fish in dietary recall [kCal]"
+  var_label(df$weight) <- "Weight [kg]"
+  var_label(df$height) <- "Height [cm]"
+  var_label(df$mean_BP) <- "Mean Systolic Blood Pressure [mm Hg]"
 
   nhanes <- df # rename the object to 'nhanes' before storing it inside the ID529data package
   rm(df)

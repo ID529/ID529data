@@ -18,7 +18,7 @@
 #'   - I30-I51 (Other forms of heart disease)
 #'
 #'
-load_cdc_wonder_raw <- function() {
+.load_cdc_wonder_raw <- function() {
   readr::read_delim(
     system.file(
       'raw-data/CDC_WONDER_heart disease deaths by census division.txt',
@@ -29,7 +29,7 @@ load_cdc_wonder_raw <- function() {
 
 #' Clean CDC WONDER Heart Disease Deaths Data
 #'
-clean_cdc_wonder_data <- function(df) {
+.clean_cdc_wonder_data <- function(df) {
 
   # remove rows where the notes are non-empty; this is because the rows where
   # notes are present are those rows at the bottom that describe the data, not

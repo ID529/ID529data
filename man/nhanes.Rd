@@ -11,6 +11,7 @@ A data frame with 2,339 rows and 18 columns:
   \item{id}{Unique identifier for individuals in NHANES}
   \item{race_ethnicity}{Race/Ethnicity: one of non-Hispanic White, non-Hispanic Black, or Hispanic}
   \item{sex_gender}{Sex/Gender [as binary]}
+  \item{age}{Age [in years] at screening}
   \item{poverty_ratio}{Ratio of Household Income to US Federal Poverty Line}
   \item{days_dental_floss}{Days [Reported] Respondents Floss per Week [days/week]}
   \item{PFAS_total}{Perfluoroalkyl and Polyfluoroalkyl Substances [ng/mL]}
@@ -26,6 +27,9 @@ A data frame with 2,339 rows and 18 columns:
   \item{popcorn_energy}{Calories from popcorn in dietary recall [kCal]}
   \item{shellfish_energy}{Calories from shellfish in dietary recall [kCal]}
   \item{fish_energy}{Calories from fish in dietary recall [kCal]}
+  \item{weight}{Weight [kg]}
+  \item{height}{Height [cm]}
+  \item{mean_BP}{Mean Systolic Blood Pressure [mm Hg]}
 }
 }
 \source{
