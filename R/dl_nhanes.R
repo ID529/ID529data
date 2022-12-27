@@ -14,9 +14,19 @@
 
 #' Download and Clean NHNAES data
 #'
-#' This function downloads NHANES data, cleans it, and stores it inside this package
+#' This function downloads NHANES data, cleans it, and stores it inside this
+#' package. This function is meant for the ID529data package developers to use
+#' and is not exported for general use.  The source code may be useful to
+#' reference for people interested in how the data were created.
 #'
+#' @seealso nhanes
 .download_and_clean_nhanes_data <- function() {
+
+  # package requirements for this function
+  # these are listed in the Suggests dependencies for this package
+  require(RNHANES)
+  require(tidyverse)
+  require(testthat)
 
   ###### Download data #####
 
@@ -260,9 +270,6 @@
     bind_rows() %>%
     select(SEQN, DR1IKCAL, DR1FS, DR1ITFAT, DR1IFDCD, DR1_040Z) %>%
     filter(!is.na(DR1FS))
-
-  cat(paste0("Writing raw diet dataset to inst/clean-data/NHANES_EHP/nhanes_combined_diet_data_raw.csv (", nrow(nhanes_combined_diet_data_raw), " rows)\n"))
-  write_csv(nhanes_combined_diet_data_raw, "inst/clean-data/NHANES_EHP/nhanes_combined_diet_data_raw.csv")
 
   nhanes_combined_diet_data <- nhanes_combined_diet_data_raw %>%
     group_by(SEQN) %>%
@@ -541,7 +548,7 @@
       PFDE = LBXPFDE
     )
 
-  df$id %<>% as.character() # convert ID to a character so it doesn't act like a numeric
+  df$id <- df$id %>%  as.character() # convert ID to a character so it doesn't act like a numeric
   df$days_dental_floss[df$days_dental_floss == 99] <- NA # code missing values
 
   # add labels for the columns
