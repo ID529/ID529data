@@ -447,7 +447,8 @@
                              nhanes_combined_diet_data,
                              nhanes_combined_nutrition_data,
                              nhanes_combined_ffq_data,
-                             nhanes_combined_oh_data),
+                             nhanes_combined_oh_data,
+                             nhanes_combined_bp_data),
                         left_join,
                         by = "SEQN")
 
@@ -477,7 +478,7 @@
             "more participants excluded for not having BMI data\n"))
 
   ## Has height/weight data
-  nhanes_data5 <- nhanes_data3 %>% mutate(qualifying = qualifying & !is.na(BMXHT) & !is.na(BMXWT))
+  nhanes_data5 <- nhanes_data4 %>% mutate(qualifying = qualifying & !is.na(BMXHT) & !is.na(BMXWT))
   cat(paste("Requirement 5:", (count_qualifying(nhanes_data4) - count_qualifying(nhanes_data5)),
             "more participants excluded for not having height/weight data\n"))
 
@@ -492,7 +493,7 @@
             "more participants excluded for not having blood pressure data\n"))
 
   # filter for just 2013-2014
-  nhanes_data4_13_14 <- nhanes_data7 %>% filter(cycle == '2013-2014')
+  nhanes_data4_13_14 <- nhanes_data4 %>% filter(cycle == '2013-2014')
 
   # select variables for inclusion in dataset
   df <- nhanes_data4_13_14 %>%
@@ -565,7 +566,7 @@
   var_label(df$fish_energy) <- "Calories from fish in dietary recall [kCal]"
   var_label(df$weight) <- "Weight (kg)"
   var_label(df$height) <- "Height (cm)"
-  var_label(df$meanBP) <- "Mean Systolic Blood Pressure [mm Hg]"
+  var_label(df$mean_BP) <- "Mean Systolic Blood Pressure [mm Hg]"
 
   nhanes <- df # rename the object to 'nhanes' before storing it inside the ID529data package
   rm(df)
