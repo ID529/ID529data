@@ -571,8 +571,8 @@
   var_label(df$popcorn_energy) <- "Calories from popcorn in dietary recall [kCal]"
   var_label(df$shellfish_energy) <- "Calories from shellfish in dietary recall [kCal]"
   var_label(df$fish_energy) <- "Calories from fish in dietary recall [kCal]"
-  var_label(df$weight) <- "Weight (kg)"
-  var_label(df$height) <- "Height (cm)"
+  var_label(df$weight) <- "Weight [kg]"
+  var_label(df$height) <- "Height [cm]"
   var_label(df$mean_BP) <- "Mean Systolic Blood Pressure [mm Hg]"
 
   nhanes <- df # rename the object to 'nhanes' before storing it inside the ID529data package
