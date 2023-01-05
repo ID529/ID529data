@@ -12,7 +12,7 @@
 #' The supplemental data these are based on are available here:
 #' \url{https://ehp.niehs.nih.gov/doi/suppl/10.1289/EHP4092}
 #'
-#' @format `nhanes`
+#' @format `nhanes_id529`
 #' A data frame with 2,339 rows and 18 columns:
 #' \describe{
 #'   \item{id}{Unique identifier for individuals in NHANES}
@@ -42,4 +42,4 @@
 #' @source \url{https://www.cdc.gov/nchs/nhanes/index.htm}
 #' @source \url{https://ehp.niehs.nih.gov/doi/10.1289/EHP4092}
 #' @source \url{https://ehp.niehs.nih.gov/doi/suppl/10.1289/EHP4092}
-"nhanes"
+"nhanes_id529"

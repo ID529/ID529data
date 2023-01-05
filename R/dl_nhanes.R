@@ -27,6 +27,7 @@
   require(RNHANES)
   require(tidyverse)
   require(testthat)
+  require(labelled)
 
   ###### Download data #####
 
@@ -575,8 +576,8 @@
   var_label(df$height) <- "Height [cm]"
   var_label(df$mean_BP) <- "Mean Systolic Blood Pressure [mm Hg]"
 
-  nhanes <- df # rename the object to 'nhanes' before storing it inside the ID529data package
+  nhanes_id529 <- df # rename the object to 'nhanes' before storing it inside the ID529data package
   rm(df)
 
-  usethis::use_data(nhanes) # write into the package
+  usethis::use_data(nhanes_id529) # write into the package
 }
