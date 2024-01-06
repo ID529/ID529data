@@ -18,7 +18,7 @@ dataset built into it. This will be our primary dataset for teaching examples.
 
 ```{r, message=FALSE}
 library(ID529data)
-data(nhanes, package = 'ID529data')
+data("nhanes_id529", package = 'ID529data')
 ```
 
 ## Documentation
@@ -31,7 +31,7 @@ loading the data.
 The data comes with a built-in data dictionary:
 
 ```{r, echo=TRUE, eval=FALSE}
-labelled::generate_dictionary(nhanes, details = 'full')
+labelled::generate_dictionary(nhanes_id529, details = 'full')
 ```
 
 ```{txt, echo=TRUE, eval=FALSE}
@@ -66,7 +66,7 @@ labelled::generate_dictionary(nhanes, details = 'full')
 For any single variable, the description can be retrieved using `var_label` from the `labelled` package. 
 
 ```{r}
-labelled::var_label(x = nhanes$poverty_ratio)
+labelled::var_label(x = nhanes_id529$poverty_ratio)
 ```
 
 ## Correlation among quantitative variables
