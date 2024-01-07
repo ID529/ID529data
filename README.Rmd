@@ -74,7 +74,7 @@ labelled::var_label(x = nhanes_id529$poverty_ratio)
 ```{r correlation figure, message = FALSE, fig.width = 14, fig.height = 12}
 library(ggcorrplot)
 
-cor_mat <- cor(nhanes %>% dplyr::select(where(is.numeric)), use = 'pairwise.complete.obs')
+cor_mat <- cor(nhanes_id529 %>% dplyr::select(where(is.numeric)), use = 'pairwise.complete.obs')
 
 ggcorrplot::ggcorrplot(
   cor_mat,

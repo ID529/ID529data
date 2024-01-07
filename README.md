@@ -1,5 +1,5 @@
 Teaching Dataset for ID529 — Data Management and Analytic Workflows in R
-<a href='https://id529.github.io'><img src='https://github.com/ID529/lectures/raw/main/graphics/id529-sticker.png' align='right' height='139' /></a>
+<a href='https://id529.github.io'><img src='https://github.com/ID529/lectures/raw/testa_dec19/graphics/id529-sticker.png' align='right' height='139' /></a>
 ================
 
 This is an R package that you can install with the following R code:
@@ -18,7 +18,7 @@ teaching examples.
 
 ``` r
 library(ID529data)
-data(nhanes, package = 'ID529data')
+data("nhanes_id529", package = 'ID529data')
 ```
 
 ## Documentation
@@ -31,7 +31,7 @@ after loading the data.
 The data comes with a built-in data dictionary:
 
 ``` r
-labelled::generate_dictionary(nhanes, details = 'full')
+labelled::generate_dictionary(nhanes_id529, details = 'full')
 ```
 
 ``` txt
@@ -67,7 +67,7 @@ For any single variable, the description can be retrieved using
 `var_label` from the `labelled` package.
 
 ``` r
-labelled::var_label(x = nhanes$poverty_ratio)
+labelled::var_label(x = nhanes_id529$poverty_ratio)
 ```
 
     ## [1] "Ratio of Household Income to US Federal Poverty Line. The value was not computed if the respondent only reported income as < $20,000 or ≥ $20,000. If family income was reported as a more detailed category, the midpoint of the range was used to compute the ratio. Values at or above 5.00 were coded as 5.00 or more because of disclosure concerns."
@@ -77,7 +77,7 @@ labelled::var_label(x = nhanes$poverty_ratio)
 ``` r
 library(ggcorrplot)
 
-cor_mat <- cor(nhanes %>% dplyr::select(where(is.numeric)), use = 'pairwise.complete.obs')
+cor_mat <- cor(nhanes_id529 %>% dplyr::select(where(is.numeric)), use = 'pairwise.complete.obs')
 
 ggcorrplot::ggcorrplot(
   cor_mat,
