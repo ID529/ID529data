@@ -1,5 +1,5 @@
 ---
-title: "Teaching Dataset for ID529 — Data Management and Analytic Workflows in R  <a href='https://id529.github.io'><img src='https://github.com/ID529/lectures/raw/testa_dec19/graphics/id529-sticker.png' align='right' height='139' /></a>"
+title: "Teaching Dataset for ID529 — Data Management and Analytic Workflows in R  <a href='https://id529.github.io'><img src='https://raw.githubusercontent.com/ID529/lectures/main/graphics/id529-sticker.png' align='right' height='139' /></a>"
 output: github_document
 ---
 
